@@ -1,5 +1,5 @@
 # Where things are
-theme               : jekyll-theme-time-machine
+theme               : jekyll-theme-minimal
 source              : .
 destination         : ./_site
 collections_dir     : .
