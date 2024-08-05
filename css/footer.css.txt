@@ -1,0 +1,75 @@
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 4em;
+  min-height: 60vh;
+}
+
+.contact-posts {
+  /*display: grid;*/
+  /*grid-template-columns: 1fr 2fr;*/
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 4em;
+  /*min-height: 10vh;*/
+}
+
+.img-thai{
+  grid-column: 1;
+}
+
+.contact-thai-post {
+  /*grid-column: 2;*/
+  padding-bottom: 2rem;
+}
+
+.contact-thai-msg p{
+  font-size: 1.5rem;
+  text-align: center;
+  font-style: italic;
+  letter-spacing: 0.1rem;
+}
+
+.contact-thai-msg-posts p{
+  font-size: 1.5rem;
+  text-align: center;
+  font-style: italic;
+  letter-spacing: 0.1rem;
+}
+
+.thai-ilustration {
+  max-width: 300px;
+}
+
+.contact-thai-redes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  color: #988AB5;
+}
+
+.contact-thai-redes-posts {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 1rem;
+  color: #fffafa;
+}
+
+.btn-circle {
+  font-size: 2.5rem;
+}
+
+.btn-circle-posts{
+  font-size: 1.5rem;
+}
+
+.btn:hover {
+  color: #b38cc4;
+}
