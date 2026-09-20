@@ -343,6 +343,7 @@
     <span class="mono">Hilal Sinem Sayar</span>
     <nav class="mono">
       <a href="#work">Work</a>
+      <a href="#earlier">Earlier</a>
       <a href="#how">How I work</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -352,20 +353,22 @@
 
 <div class="wrap">
   <header class="hero">
-    <span class="badge mono">Product owner · Multi-tenant ERP</span>
+    <span class="badge mono">Product owner and software engineer · İzmir</span>
     <h1 id="h1">
-      <span class="line"><span>I own the purchasing</span></span>
-      <span class="line"><span>and approval domain</span></span>
-      <span class="line"><span>of an <i>ERP</i>.</span></span>
+      <span class="line"><span>I design, spec and build</span></span>
+      <span class="line"><span>the finance, project</span></span>
+      <span class="line"><span>and HR side of an <i>ERP</i>.</span></span>
     </h1>
-    <p class="role">Discovery, the spec, the acceptance criteria, the grooming session, and the call on what we don't build.</p>
+    <p class="role">Multi-tenant ERP sold to engineering and contracting firms.</p>
 
-    <p class="first">The systems I work on decide how money gets committed inside a company. A requirements
-    gap there doesn't show up as a bug. It shows up as a number in a report that nobody can explain.</p>
+    <p class="first">I run the discovery and the market comparison, write the spec, the acceptance criteria
+    and the test cases, sit in grooming with the team, and write a large part of the code. The systems I work
+    on decide how money gets committed inside a company, so a requirements gap there doesn't show up as a
+    bug. It shows up as a number in a report that nobody can explain.</p>
 
-    <p>I'm technical enough to argue with engineers in their own terms, and I'd rather find out a design is
-    wrong by modelling it against real production data than by shipping it and watching. Most of what follows
-    is an example of that.</p>
+    <p>Doing both halves is the point rather than an accident. I'd rather find out a design is wrong by
+    modelling it against real production data than by shipping it and watching, and I can usually get to
+    that answer myself. Most of what follows is an example of it.</p>
   </header>
 </div>
 
@@ -389,18 +392,25 @@
   <div class="wrap">
     <article>
       <span class="kicker mono rv">01 / 2026 · shipped to pilot</span>
-      <h2 class="rv">Purchase Requisition, rebuilt</h2>
-      <p class="meta rv">Discovery, product decisions, spec, rollout</p>
+      <h2 class="rv">Project budget control, end to end</h2>
+      <p class="meta rv">Discovery, market comparison, product decisions, spec, rollout</p>
 
-      <p class="rv">The brief was "port purchase requests to the new platform." Two weeks of discovery said
-      something else. Across eighteen months of production data, 31% of requisition lines were creating a
-      brand-new material record, and 68% of those were duplicates of an item that already existed. The same
-      bolt had six names, so finance could not report spend by category without cleaning it in Excel first.</p>
+      <p class="rv">A site engineer raises a request, the request consumes project budget, the budget
+      position decides which approval route it takes, and finance reports on what was spent and against what.
+      On the legacy platform those four things lived in four places and agreed with each other only by
+      accident. Each part worked. The seam between them was where the money went missing.</p>
 
-      <p class="rv">Interviews explained why. Searching the catalogue took longer than typing the item name,
-      so people typed it. The data problem and the usability problem turned out to be one problem seen from
-      opposite ends, which is what made the fix obvious: the catalogue had to be <em>faster</em> than free
-      text, not merely mandatory.</p>
+      <p class="rv">Discovery put numbers on it. Across eighteen months of production data, 31% of request
+      lines were creating a brand-new material record, and 68% of those duplicated an item that already
+      existed, so category spend was a guess rather than a figure. Interviews explained why: searching the
+      catalogue took longer than typing the item name, so people typed it. The data problem and the usability
+      problem were one problem seen from opposite ends.</p>
+
+      <p class="rv">I also looked at how three competing ERP products in this segment handle the same domain,
+      through their documentation, demo environments and release notes. Every one of them treats an
+      over-budget request as an exception to be blocked or overridden by a privileged user, and every one
+      shows budget as a report on a separate screen. Neither is a technical limitation. Both are old
+      decisions nobody revisited, which is where the opening was.</p>
     </article>
   </div>
 
@@ -449,9 +459,9 @@
 
   <div class="wrap">
     <article>
-      <div class="pull rv">The finding that killed our first design: 17% of real requisitions were over
-      budget. Blocking them, the obvious thing to do, would have broken one in six real requests.
-      Over-budget isn't an error state. It's a different approval route.</div>
+      <div class="pull rv">The finding that killed our first design: 17% of real requests were over budget.
+      Blocking them, the obvious thing to do and what every competitor does, would have broken one in six
+      real requests. Over-budget isn't an error state. It's a different approval route.</div>
 
       <p class="rv">Budget is consumed at submit rather than at approval, because two requisitions each
       within the remaining balance can both pass approval and jointly exceed it, and nothing in the system
@@ -495,8 +505,8 @@
 
   <div class="wrap">
     <article>
-      <p class="artifacts mono rv">Produced · <b>discovery report</b> · <b>PRD</b> · <b>acceptance criteria</b>
-      · <b>test cases</b> · <b>instrumentation plan</b> · <b>phased rollout</b></p>
+      <p class="artifacts mono rv">Produced · <b>discovery report</b> · <b>market comparison</b> · <b>PRD</b>
+      · <b>acceptance criteria</b> · <b>test cases</b> · <b>instrumentation plan</b> · <b>phased rollout</b></p>
       <a class="readmore rv" href="case-study-prq.pdf">Read the full document (PDF, 7 pages) →</a>
     </article>
   </div>
@@ -604,7 +614,7 @@
   <!-- 03 -->
   <div class="wrap" style="padding-top:96px">
     <article>
-      <span class="kicker mono rv">03 / product bet</span>
+      <span class="kicker mono rv">03 / AI add-on</span>
       <h2 class="rv">Natural-language record creation</h2>
       <p class="meta rv">Pilot scoping, safety design, stop criteria</p>
 
@@ -720,6 +730,55 @@
   </div>
 </section>
 
+<!-- ============================ EARLIER ============================ -->
+<section id="earlier">
+  <div class="wrap">
+    <h2 class="sechead mono rv">Before the ERP</h2>
+
+    <article class="rv">
+      <span class="kicker mono">Product case study · Wizardio / SCW.AI</span>
+      <h2>Supply chain analytics</h2>
+      <p class="meta">User stories, acceptance criteria, backlog, sprint planning</p>
+      <p>A product case study on a manufacturing analytics platform, focused on usability and monitoring:
+      an in-context tooltip system, dashboard filtering, anomaly alerts, and a data distribution report.
+      I wrote the user stories and acceptance criteria, worked the backlog and sprint plan, and ran it
+      across customer success, design and engineering. It is the first place I had to defend a scope cut
+      to three different audiences in the same week.</p>
+    </article>
+
+    <article class="rv" style="border-top:1px solid var(--rule-soft); padding-top:30px; margin-top:8px">
+      <span class="kicker mono">Graduation project · Python, ML, Flutter, Firebase</span>
+      <h2>Tarifeni Bul</h2>
+      <p class="meta">AI-based mobile tariff recommendation</p>
+      <p>An app that reads a person's past mobile data usage, forecasts what they will need next month, and
+      recommends the cheapest package across Turkish operators. A time-series model in Python behind a
+      Flutter interface, with Firebase underneath. The interesting part was not the model. It was deciding
+      how much of its uncertainty to show someone who just wants to know which package to buy.</p>
+    </article>
+
+    <article class="rv" style="border-top:1px solid var(--rule-soft); padding-top:30px; margin-top:8px">
+      <span class="kicker mono">Research · Android, BLE, ML</span>
+      <h2>SISMOS</h2>
+      <p class="meta">Emergency Bluetooth tracker for post-disaster search</p>
+      <p>An Android tool that estimates distance from Bluetooth signal strength using a trained model, to
+      help locate people trapped under rubble after an earthquake. Built for field conditions, so low power
+      draw and a reading a rescuer can act on mattered more than accuracy on paper.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ============================ EDUCATION ============================ -->
+<section id="education">
+  <div class="wrap">
+    <h2 class="sechead mono rv">Education</h2>
+    <dl class="stack">
+      <div class="rv"><dt class="mono">2019 to 2025</dt><dd><strong>İzmir University of Economics</strong><br>
+        B.Sc. Computer Engineering, High Honor, GPA 3.61</dd></div>
+      <div class="rv"><dt class="mono">Based in</dt><dd>İzmir, Türkiye</dd></div>
+    </dl>
+  </div>
+</section>
+
 <!-- ============================ HOW I WORK ============================ -->
 <section id="how">
   <div class="wrap">
@@ -732,6 +791,11 @@
       <li class="rv"><p><strong>Every decision gets written down with the alternative we rejected.</strong>
       Not to look rigorous. So that when someone reopens it three sprints later, we're arguing about new
       information rather than re-running the old argument.</p></li>
+
+      <li class="rv"><p><strong>Look outside before designing.</strong> For the budget work I went through
+      three competing ERP products and asked our two closest customers what they had used before and why
+      they left. The most useful thing it gave me was not a feature list. It was the confidence that a
+      behaviour everyone shipped was a habit rather than a requirement.</p></li>
 
       <li class="rv"><p><strong>Every target metric gets a counter-metric.</strong> Making the catalogue
       mandatory would have improved data quality and wrecked entry speed. If I hadn't been measuring time to
@@ -773,6 +837,7 @@
     <div class="lines">
       <div class="rv"><span class="mono">Email</span><a href="mailto:hilalsinemsayar@gmail.com">hilalsinemsayar@gmail.com</a></div>
       <div class="rv"><span class="mono">LinkedIn</span><a href="https://www.linkedin.com/in/hilalsinemsayar/">linkedin.com/in/hilalsinemsayar</a></div>
+      <div class="rv"><span class="mono">GitHub</span><a href="https://github.com/hilalsinem">github.com/hilalsinem</a></div>
       <div class="rv"><span class="mono">Case study</span><a href="case-study-prq.pdf">Purchase Requisition, PRD and business analysis (PDF)</a></div>
     </div>
   </div>
