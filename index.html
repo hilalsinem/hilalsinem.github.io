@@ -4,43 +4,30 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hilal Sinem Sayar · Product</title>
-<meta name="description" content="Product owner on a multi-tenant ERP. Discovery, specs, acceptance criteria, and the call on what we don't build.">
+<meta name="description" content="Product owner and software engineer. Finance, project and HR modules of a multi-tenant ERP.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Hilal Sinem Sayar · Product">
-<meta property="og:description" content="Product owner on a multi-tenant ERP sold to engineering and contracting firms.">
+<meta property="og:description" content="Product owner and software engineer. Finance, project and HR modules of a multi-tenant ERP.">
 <meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#faf8f4;
-    --paper-2:#f3efe7;
-    --ink:#191713;
-    --body:#3a362f;
-    --muted:#807a6f;
-    --rule:#ddd7cb;
-    --rule-soft:#e8e3d8;
-    --accent:#8a3d1e;
-    --blue:#22536e;
-    --amber:#b0741b;
-    --card:#ffffff;
+    --paper:#faf8f4; --paper-2:#f3efe7;
+    --ink:#191713; --body:#413c34; --muted:#847d71;
+    --rule:#ddd7cb; --rule-soft:#e8e3d8;
+    --accent:#8a3d1e; --blue:#22536e; --amber:#b0741b;
+    --card:#fff;
     --shadow:0 1px 2px rgba(25,23,19,.05), 0 8px 26px rgba(25,23,19,.06);
-    --text:42rem;
-    --wide:58rem;
+    --wide:56rem;
   }
   @media (prefers-color-scheme: dark){
     :root{
-      --paper:#141310;
-      --paper-2:#1b1a16;
-      --ink:#f3f0e8;
-      --body:#c7c2b6;
-      --muted:#8d8779;
-      --rule:#33302a;
-      --rule-soft:#262420;
-      --accent:#dd8f63;
-      --blue:#6fa8c6;
-      --amber:#d9a86a;
+      --paper:#141310; --paper-2:#1b1a16;
+      --ink:#f3f0e8; --body:#c7c2b6; --muted:#8d8779;
+      --rule:#33302a; --rule-soft:#262420;
+      --accent:#dd8f63; --blue:#6fa8c6; --amber:#d9a86a;
       --card:#1d1b17;
       --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 30px rgba(0,0,0,.35);
     }
@@ -51,112 +38,108 @@
   body{
     margin:0; background:var(--paper); color:var(--body);
     font-family:"Source Serif 4",Georgia,serif;
-    font-size:19px; line-height:1.62; font-weight:400;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
+    font-size:17.5px; line-height:1.55;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;
   }
-
-  .wrap{ max-width:var(--text); margin:0 auto; padding:0 24px; }
-  .wide{ max-width:var(--wide); margin:0 auto; padding:0 24px; }
-
+  .wrap{ max-width:var(--wide); margin:0 auto; padding:0 26px; }
   a{ color:var(--accent); text-decoration:none; border-bottom:1px solid currentColor; }
   a:hover{ color:var(--ink); }
+  p{ margin:0 0 12px; }
+  p:last-child{ margin-bottom:0; }
 
-  .mono{
-    font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;
-    font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; font-weight:500;
-  }
-  .ui{ font-family:"IBM Plex Sans",system-ui,sans-serif; }
+  .mono{ font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+    font-size:.64rem; letter-spacing:.14em; text-transform:uppercase; font-weight:500; }
 
-  /* ================= reveal ================= */
-  .rv{ opacity:0; transform:translateY(20px); }
+  /* reveal */
+  .rv{ opacity:0; transform:translateY(16px); }
   .rv.in{ opacity:1; transform:none;
-    transition:opacity .7s cubic-bezier(.22,.7,.3,1), transform .7s cubic-bezier(.22,.7,.3,1);
-    transition-delay:calc(var(--i,0) * 90ms); }
-  @media (prefers-reduced-motion:reduce){
-    .rv{ opacity:1; transform:none; }
-    html{ scroll-behavior:auto; }
-  }
+    transition:opacity .6s cubic-bezier(.22,.7,.3,1), transform .6s cubic-bezier(.22,.7,.3,1);
+    transition-delay:calc(var(--i,0) * 70ms); }
+  @media (prefers-reduced-motion:reduce){ .rv{ opacity:1; transform:none; } html{ scroll-behavior:auto; } }
 
-  /* ================= top bar ================= */
-  .topbar{ position:sticky; top:0; z-index:40; background:color-mix(in srgb, var(--paper) 88%, transparent);
+  /* topbar */
+  .topbar{ position:sticky; top:0; z-index:40;
+    background:color-mix(in srgb, var(--paper) 90%, transparent);
     backdrop-filter:blur(8px); border-bottom:1px solid var(--rule); }
-  .topbar .wide{ display:flex; justify-content:space-between; align-items:center;
-    padding-top:14px; padding-bottom:13px; gap:16px; }
-  .topbar .mono{ color:var(--muted); }
-  .topbar nav{ display:flex; gap:22px; }
+  .topbar .wrap{ display:flex; justify-content:space-between; align-items:center;
+    padding-top:13px; padding-bottom:12px; gap:14px; }
+  .topbar .nm{ color:var(--ink); }
+  .topbar nav{ display:flex; gap:20px; }
   .topbar nav a{ border-bottom-color:transparent; color:var(--muted); }
   .topbar nav a:hover{ color:var(--ink); border-bottom-color:currentColor; }
   .progress{ position:absolute; left:0; bottom:-1px; height:2px; width:0; background:var(--accent); }
-  @media (max-width:700px){ .topbar nav{ display:none; } }
+  @media (max-width:760px){ .topbar nav{ display:none; } }
 
-  /* ================= hero ================= */
-  .hero{ padding:92px 0 10px; position:relative; }
-  .hero .badge{ color:var(--muted); margin-bottom:22px; display:block; }
-  h1{
-    font-size:clamp(2.3rem,6.4vw,3.6rem); line-height:1.06; letter-spacing:-.02em;
-    font-weight:700; color:var(--ink); margin:0 0 14px;
-  }
+  /* hero */
+  .hero{ padding:70px 0 4px; }
+  h1{ font-size:clamp(2rem,5.4vw,3.1rem); line-height:1.06; letter-spacing:-.02em;
+    font-weight:700; color:var(--ink); margin:0 0 10px; }
   h1 .line{ display:block; overflow:hidden; }
   h1 .line > span{ display:block; transform:translateY(105%); }
-  h1.go .line > span{ transform:none; transition:transform .95s cubic-bezier(.2,.75,.25,1); }
-  h1.go .line:nth-child(2) > span{ transition-delay:.1s; }
-  h1.go .line:nth-child(3) > span{ transition-delay:.2s; }
+  h1.go .line > span{ transform:none; transition:transform .9s cubic-bezier(.2,.75,.25,1); }
+  h1.go .line:nth-child(2) > span{ transition-delay:.09s; }
   h1 i{ font-style:normal; color:var(--accent); }
-  .role{ color:var(--muted); font-size:1.02rem; margin:0 0 34px; font-style:italic; }
-  .hero p.first{ font-size:1.2rem; line-height:1.55; color:var(--ink); margin:0 0 18px; }
-  .hero p{ margin:0 0 18px; }
+  .tagline{ color:var(--muted); font-style:italic; font-size:1.02rem; margin:0 0 20px; }
+  .heroLinks{ display:flex; gap:18px; flex-wrap:wrap; margin-top:18px; }
+  .heroLinks a{ border-bottom-color:transparent; }
+  .heroLinks a:hover{ border-bottom-color:currentColor; }
 
-  /* hero pipeline animation */
-  .pipe{ margin:44px 0 6px; padding:22px 0 18px; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); }
-  .pipe .track{ display:flex; position:relative; }
-  .pipe .st{ flex:1; position:relative; padding-top:20px; }
-  .pipe .st:before{ content:""; position:absolute; top:0; left:0; right:0; height:2px; background:var(--rule); }
-  .pipe .st .fill{ position:absolute; top:0; left:0; height:2px; width:0; background:var(--accent); }
-  .pipe .st:after{ content:""; position:absolute; top:-4px; left:0; width:10px; height:10px; border-radius:50%;
-    background:var(--paper); border:2px solid var(--rule); transition:border-color .4s, background .4s; }
-  .pipe .st.on:after{ background:var(--accent); border-color:var(--accent); }
-  .pipe .st b{ display:block; font-family:"IBM Plex Mono",monospace; font-size:.64rem; letter-spacing:.13em;
-    text-transform:uppercase; color:var(--muted); font-weight:500; }
-  .pipe .st.on b{ color:var(--ink); }
-  .pipe .cap{ color:var(--muted); margin-top:14px; font-size:.86rem; font-style:italic; }
+  /* sections */
+  section{ padding-top:74px; }
+  .sechead{ display:flex; align-items:baseline; gap:14px;
+    border-bottom:1px solid var(--ink); padding-bottom:7px; margin:0 0 26px; }
+  .sechead .n{ color:var(--accent); }
+  .sechead h2{ font-size:1.08rem; font-weight:700; color:var(--ink); margin:0; letter-spacing:-.01em; }
 
-  /* ================= sections ================= */
-  section{ padding-top:104px; }
-  .sechead{ color:var(--muted); border-bottom:1px solid var(--rule); padding-bottom:9px; margin:0 0 42px; }
+  /* two-column row */
+  .row{ display:grid; grid-template-columns:8.5rem 1fr; gap:22px;
+    padding:16px 0; border-bottom:1px solid var(--rule-soft); }
+  .row:last-of-type{ border-bottom:none; }
+  .row .side{ color:var(--muted); padding-top:4px; }
+  .row h3{ font-size:1.16rem; font-weight:600; color:var(--ink); margin:0 0 4px; letter-spacing:-.01em; }
+  .row .sub{ color:var(--muted); font-size:.9rem; font-style:italic; margin:0 0 7px; }
+  .row p{ margin:0 0 8px; }
+  @media (max-width:700px){
+    .row{ grid-template-columns:1fr; gap:6px; }
+    .row .side{ padding-top:0; }
+  }
 
-  article{ padding-bottom:20px; }
-  .kicker{ color:var(--muted); display:block; margin-bottom:10px; }
-  h2{ font-size:clamp(1.55rem,3.4vw,2rem); line-height:1.16; letter-spacing:-.015em;
-    font-weight:700; color:var(--ink); margin:0 0 6px; }
-  h3{ font-size:1.22rem; font-weight:600; color:var(--ink); margin:34px 0 8px; letter-spacing:-.008em; }
-  .meta{ color:var(--muted); font-size:.92rem; margin:0 0 20px; font-style:italic; }
-  article p{ margin:0 0 15px; }
+  .tags{ display:flex; gap:6px; flex-wrap:wrap; margin-top:9px; }
+  .tags span{ font-family:"IBM Plex Mono",monospace; font-size:.6rem; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--muted); border:1px solid var(--rule);
+    border-radius:2px; padding:2px 7px; }
 
-  .pull{ border-left:2px solid var(--accent); padding:4px 0 4px 20px; margin:26px 0;
-    color:var(--ink); font-size:1.08rem; line-height:1.5; }
+  .more{ font-family:"IBM Plex Mono",monospace; font-size:.66rem; letter-spacing:.1em;
+    text-transform:uppercase; font-weight:500; }
 
-  .artifacts{ color:var(--muted); margin-top:22px; line-height:2.05; }
-  .artifacts b{ color:var(--body); font-weight:500; }
-  .readmore{ display:inline-block; margin-top:10px; font-family:"IBM Plex Mono",monospace;
-    font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; font-weight:500; }
+  /* case study band */
+  .band{ border:1px solid var(--rule); border-radius:6px; padding:24px 26px; background:var(--paper-2); }
+  .band h3{ font-size:1.3rem; font-weight:700; color:var(--ink); margin:0 0 6px; letter-spacing:-.012em; }
+  .band .sub{ color:var(--muted); font-style:italic; font-size:.92rem; margin:0 0 14px; }
+  .kpis{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin:18px 0 16px;
+    padding:16px 0; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); }
+  .kpis b{ display:block; font-size:1.5rem; font-weight:700; color:var(--ink);
+    letter-spacing:-.02em; font-variant-numeric:tabular-nums; line-height:1.1; }
+  .kpis span{ display:block; margin-top:5px; color:var(--muted);
+    font-family:"IBM Plex Mono",monospace; font-size:.57rem; letter-spacing:.11em; text-transform:uppercase; }
+  @media (max-width:640px){ .kpis{ grid-template-columns:repeat(2,1fr); } }
 
-  /* ================= figures ================= */
-  figure{ margin:40px 0 34px; }
-  figcaption{ color:var(--muted); font-size:.86rem; margin-top:14px; font-style:italic; max-width:34rem; }
-  .replay{ float:right; font-family:"IBM Plex Mono",monospace; font-size:.62rem; letter-spacing:.12em;
-    text-transform:uppercase; color:var(--muted); cursor:pointer; border:none; background:none;
-    padding:4px 0; font-weight:500; }
+  /* figures */
+  figure{ margin:26px 0 8px; }
+  figcaption{ color:var(--muted); font-size:.82rem; margin-top:11px; font-style:italic; }
+  .replay{ display:block; margin:0 0 7px auto; font-family:"IBM Plex Mono",monospace; font-size:.6rem;
+    letter-spacing:.12em; text-transform:uppercase; color:var(--muted); cursor:pointer;
+    border:1px solid var(--rule); border-radius:3px; background:none; padding:4px 10px; font-weight:500; }
   .replay:hover{ color:var(--accent); }
-
   .card{ background:var(--card); border:1px solid var(--rule); border-radius:6px;
     box-shadow:var(--shadow); overflow:hidden; }
+  .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+  @media (max-width:760px){ .grid2{ grid-template-columns:1fr; } }
 
-  /* --- app mockup --- */
+  /* app mockup */
   .app{ font-family:"IBM Plex Sans",system-ui,sans-serif; font-size:12.5px; line-height:1.45; color:var(--body); }
-  .app .bar{ background:var(--paper-2); border-bottom:1px solid var(--rule);
-    padding:9px 14px; display:flex; justify-content:space-between; align-items:center;
-    font-weight:600; color:var(--ink); font-size:12.5px; }
+  .app .bar{ background:var(--paper-2); border-bottom:1px solid var(--rule); padding:9px 14px;
+    display:flex; justify-content:space-between; align-items:center; font-weight:600; color:var(--ink); }
   .app .bar .btns span{ border:1px solid var(--rule); border-radius:3px; padding:3px 10px;
     margin-left:6px; font-size:11px; font-weight:500; color:var(--muted); }
   .app .bar .btns span.primary{ background:var(--blue); border-color:var(--blue); color:#fff; }
@@ -166,22 +149,19 @@
   .app .bd{ padding:13px 14px; }
   .app .lbl{ font-family:"IBM Plex Mono",monospace; font-size:9.5px; letter-spacing:.13em;
     text-transform:uppercase; color:var(--muted); font-weight:500; margin-bottom:9px; }
-
-  .figs{ display:flex; gap:26px; margin-bottom:10px; flex-wrap:wrap; }
-  .figs > div{ font-size:10.5px; color:var(--muted); font-family:"IBM Plex Mono",monospace;
+  .figs{ display:flex; gap:24px; margin-bottom:10px; flex-wrap:wrap; }
+  .figs > div{ font-size:10px; color:var(--muted); font-family:"IBM Plex Mono",monospace;
     letter-spacing:.1em; text-transform:uppercase; }
-  .figs b{ display:block; color:var(--ink); font-size:17px; font-weight:600; letter-spacing:0;
+  .figs b{ display:block; color:var(--ink); font-size:16px; font-weight:600; letter-spacing:0;
     text-transform:none; font-variant-numeric:tabular-nums; margin-top:2px; }
   .track2{ height:8px; background:var(--rule-soft); border-radius:4px; overflow:hidden; margin:4px 0 9px; }
   .track2 i{ display:block; height:100%; width:0; background:var(--blue);
     transition:width 1.4s cubic-bezier(.3,.8,.3,1), background .5s; }
   .app.over .track2 i{ background:var(--amber); }
-  .effect{ font-size:11.5px; color:var(--body); }
+  .effect{ font-size:11.5px; }
   .effect b{ color:var(--ink); font-variant-numeric:tabular-nums; font-weight:600; }
-
   .warnbox{ margin-top:11px; border:1px solid #e6cfa3; background:#fdf6e8; border-radius:4px;
-    padding:10px 12px; font-size:11.5px; color:#7d5410;
-    max-height:0; opacity:0; overflow:hidden; padding-top:0; padding-bottom:0;
+    padding:0 12px; font-size:11.5px; color:#7d5410; max-height:0; opacity:0; overflow:hidden;
     transition:max-height .6s ease, opacity .5s ease, padding .6s ease; }
   .app.over .warnbox{ max-height:150px; opacity:1; padding-top:10px; padding-bottom:10px; }
   .warnbox b{ color:#6b4708; }
@@ -190,7 +170,6 @@
     .warnbox{ background:#2a2318; border-color:#4d3f27; color:#d9b478; }
     .warnbox b{ color:#f0d3a1; }
   }
-
   .srch{ border:1.5px solid var(--blue); border-radius:4px; margin-bottom:10px; }
   .srch .inp{ padding:6px 11px; border-bottom:1px solid var(--rule-soft); color:var(--ink); font-size:12px; }
   .srch .inp .car{ display:inline-block; width:1px; height:12px; background:var(--ink);
@@ -200,8 +179,8 @@
   .srch .opt.sel{ background:color-mix(in srgb, var(--blue) 9%, transparent); }
   .srch .opt code{ font-family:"IBM Plex Mono",monospace; color:var(--blue); font-weight:600; margin-right:9px; }
   .srch .opt em{ font-style:normal; color:var(--amber); font-size:10px; white-space:nowrap; }
-  .srch .new{ padding:6px 11px; border-top:1px solid var(--rule-soft); color:var(--blue); font-weight:600; font-size:11.5px; }
-
+  .srch .new{ padding:6px 11px; border-top:1px solid var(--rule-soft); color:var(--blue);
+    font-weight:600; font-size:11.5px; }
   table.lines{ width:100%; border-collapse:collapse; font-size:11.5px; }
   table.lines td{ padding:6px 8px 6px 0; border-bottom:1px solid var(--rule-soft); }
   table.lines tr:last-child td{ border-bottom:none; }
@@ -210,26 +189,27 @@
   table.lines tr.add{ opacity:0; transition:opacity .55s ease .15s; }
   .app.over table.lines tr.add{ opacity:1; }
 
-  /* --- results chart --- */
-  .chart{ padding:26px 24px 20px; }
-  .crow{ margin-bottom:22px; }
-  .crow:last-child{ margin-bottom:6px; }
-  .crow .cl{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px; gap:12px; }
-  .crow .cname{ font-family:"IBM Plex Sans",sans-serif; font-size:13px; font-weight:500; color:var(--ink); }
-  .crow .cval{ font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.06em; color:var(--muted); }
+  /* chart */
+  .chart{ padding:22px 22px 16px; }
+  .crow{ margin-bottom:17px; }
+  .crow:last-child{ margin-bottom:2px; }
+  .crow .cl{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px; gap:12px; }
+  .crow .cname{ font-family:"IBM Plex Sans",sans-serif; font-size:12.5px; font-weight:500; color:var(--ink); }
+  .crow .cval{ font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.06em; color:var(--muted); }
   .crow .cval b{ color:var(--accent); font-weight:600; }
-  .bar2{ position:relative; height:12px; background:var(--rule-soft); border-radius:2px; }
+  .bar2{ position:relative; height:11px; background:var(--rule-soft); border-radius:2px; }
   .bar2 .was{ position:absolute; inset:0 auto 0 0; background:var(--rule); border-radius:2px;
     width:0; transition:width 1.1s cubic-bezier(.3,.8,.3,1); }
   .bar2 .now{ position:absolute; inset:0 auto 0 0; background:var(--blue); border-radius:2px;
     width:0; transition:width 1.3s cubic-bezier(.3,.8,.3,1) .45s; }
-  .chart .legend{ display:flex; gap:20px; margin-top:20px; padding-top:14px; border-top:1px solid var(--rule-soft); }
-  .chart .legend span{ font-family:"IBM Plex Mono",monospace; font-size:10px; letter-spacing:.12em;
+  .chart .legend{ display:flex; gap:18px; margin-top:16px; padding-top:12px;
+    border-top:1px solid var(--rule-soft); flex-wrap:wrap; }
+  .chart .legend span{ font-family:"IBM Plex Mono",monospace; font-size:9.5px; letter-spacing:.12em;
     text-transform:uppercase; color:var(--muted); display:flex; align-items:center; gap:7px; }
   .chart .legend i{ width:14px; height:8px; border-radius:2px; display:inline-block; }
 
-  /* --- svg diagram --- */
-  .diagram{ padding:14px 10px 6px; }
+  /* diagram */
+  .diagram{ padding:12px 10px 4px; }
   .diagram svg{ width:100%; height:auto; display:block; }
   .dpath{ stroke-dasharray:var(--len,300); stroke-dashoffset:var(--len,300);
     transition:stroke-dashoffset 1.2s ease; }
@@ -241,110 +221,80 @@
   .go .dpath.p2{ transition-delay:.35s } .go .dpath.p3{ transition-delay:.7s }
   .go .dpath.back{ transition-delay:1.25s }
 
-  /* --- assistant --- */
-  .asst .prompt{ padding:14px; border-bottom:1px solid var(--rule-soft);
-    font-family:"IBM Plex Sans",sans-serif; font-size:13px; color:var(--ink); min-height:62px; }
-  .asst .prompt .car{ display:inline-block; width:1.5px; height:14px; background:var(--accent);
+  /* assistant */
+  .asst .prompt{ padding:13px 14px; border-bottom:1px solid var(--rule-soft);
+    font-family:"IBM Plex Sans",sans-serif; font-size:12.5px; color:var(--ink); min-height:58px; }
+  .asst .prompt .car{ display:inline-block; width:1.5px; height:13px; background:var(--accent);
     vertical-align:-2px; animation:blink 1.05s steps(1) infinite; }
-  .asst .out{ padding:13px 14px; }
-  .asst .fld{ display:flex; gap:14px; padding:7px 0; border-bottom:1px solid var(--rule-soft);
-    font-family:"IBM Plex Sans",sans-serif; font-size:12px; align-items:baseline;
+  .asst .out{ padding:11px 14px; }
+  .asst .fld{ display:flex; gap:14px; padding:6px 0; border-bottom:1px solid var(--rule-soft);
+    font-family:"IBM Plex Sans",sans-serif; font-size:11.5px; align-items:baseline;
     opacity:0; transform:translateY(5px); transition:opacity .45s, transform .45s; }
   .asst .fld.on{ opacity:1; transform:none; }
   .asst .fld:last-of-type{ border-bottom:none; }
-  .asst .fld span{ flex:0 0 7.5rem; font-family:"IBM Plex Mono",monospace; font-size:9.5px;
+  .asst .fld span{ flex:0 0 6.5rem; font-family:"IBM Plex Mono",monospace; font-size:9px;
     letter-spacing:.12em; text-transform:uppercase; color:var(--muted); }
   .asst .fld b{ color:var(--ink); font-weight:500; }
-  .asst .foot{ padding:10px 14px; border-top:1px solid var(--rule-soft); background:var(--paper-2);
-    font-family:"IBM Plex Mono",monospace; font-size:9.5px; letter-spacing:.12em;
-    text-transform:uppercase; color:var(--muted); display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; }
+  .asst .foot{ padding:9px 14px; border-top:1px solid var(--rule-soft); background:var(--paper-2);
+    font-family:"IBM Plex Mono",monospace; font-size:9px; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--muted); display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; }
   .asst .foot b{ color:var(--accent); font-weight:500; }
 
-  /* --- timesheet grid --- */
-  .sheet{ padding:18px 16px 14px; }
-  .sheet .dayhdr{ display:flex; justify-content:space-between; align-items:center;
-    font-family:"IBM Plex Sans",sans-serif; font-size:12px; padding:7px 10px; border-radius:4px;
+  /* timesheet */
+  .sheet{ padding:16px 14px 12px; }
+  .sheet .dayhdr{ display:flex; justify-content:space-between; align-items:center; gap:10px;
+    font-family:"IBM Plex Sans",sans-serif; font-size:11.5px; padding:7px 10px; border-radius:4px;
     background:var(--paper-2); color:var(--ink); font-weight:600; margin-bottom:8px;
     border:1px solid var(--rule-soft); transition:background .5s, border-color .5s; }
   .sheet.go .dayhdr{ background:color-mix(in srgb, var(--blue) 12%, transparent); border-color:var(--blue); }
-  .sheet .dayhdr .st{ font-family:"IBM Plex Mono",monospace; font-size:9.5px; letter-spacing:.12em;
-    text-transform:uppercase; color:var(--muted); font-weight:500; }
+  .sheet .dayhdr .st{ font-family:"IBM Plex Mono",monospace; font-size:9px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--muted); font-weight:500; white-space:nowrap; }
   .sheet.go .dayhdr .st{ color:var(--blue); }
   .sheet .wrow{ display:flex; align-items:center; gap:10px; padding:6px 10px;
-    font-family:"IBM Plex Sans",sans-serif; font-size:11.5px; border-bottom:1px solid var(--rule-soft); }
+    font-family:"IBM Plex Sans",sans-serif; font-size:11px; border-bottom:1px solid var(--rule-soft); }
   .sheet .wrow:last-child{ border-bottom:none; }
   .sheet .wrow .tick{ width:13px; height:13px; border-radius:3px; border:1.5px solid var(--rule);
     flex:0 0 auto; position:relative; transition:background .35s, border-color .35s; }
   .sheet.go .wrow .tick{ background:var(--blue); border-color:var(--blue); }
   .sheet .wrow .tick:after{ content:""; position:absolute; left:3.5px; top:1px; width:4px; height:7px;
-    border:solid #fff; border-width:0 1.6px 1.6px 0; transform:rotate(45deg) scale(0);
-    transition:transform .3s ease; }
+    border:solid #fff; border-width:0 1.6px 1.6px 0; transform:rotate(45deg) scale(0); transition:transform .3s ease; }
   .sheet.go .wrow .tick:after{ transform:rotate(45deg) scale(1); }
   .sheet.go .wrow:nth-child(2) .tick, .sheet.go .wrow:nth-child(2) .tick:after{ transition-delay:.15s }
   .sheet.go .wrow:nth-child(3) .tick, .sheet.go .wrow:nth-child(3) .tick:after{ transition-delay:.3s }
   .sheet.go .wrow:nth-child(4) .tick, .sheet.go .wrow:nth-child(4) .tick:after{ transition-delay:.45s }
   .sheet.go .wrow:nth-child(5) .tick, .sheet.go .wrow:nth-child(5) .tick:after{ transition-delay:.6s }
   .sheet .wrow .nm{ flex:1; color:var(--ink); }
-  .sheet .wrow .hrs{ font-family:"IBM Plex Mono",monospace; font-size:10.5px; color:var(--muted); }
-  .sheet .wrow .src{ font-family:"IBM Plex Mono",monospace; font-size:9px; letter-spacing:.1em;
+  .sheet .wrow .hrs{ font-family:"IBM Plex Mono",monospace; font-size:10px; color:var(--muted); }
+  .sheet .wrow .src{ font-family:"IBM Plex Mono",monospace; font-size:8.5px; letter-spacing:.1em;
     text-transform:uppercase; color:var(--muted); border:1px solid var(--rule); border-radius:2px; padding:1px 5px; }
 
-  /* --- stat band --- */
-  .stats{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--rule);
-    border:1px solid var(--rule); border-radius:6px; overflow:hidden; margin:44px 0 10px; }
-  .stats div{ background:var(--paper); padding:20px 18px; }
-  .stats b{ display:block; font-size:clamp(1.5rem,4vw,2.1rem); font-weight:700; color:var(--ink);
-    letter-spacing:-.02em; line-height:1.1; font-variant-numeric:tabular-nums; }
-  .stats span{ display:block; margin-top:7px; color:var(--muted);
-    font-family:"IBM Plex Mono",monospace; font-size:.6rem; letter-spacing:.13em; text-transform:uppercase; }
-  @media (max-width:700px){ .stats{ grid-template-columns:repeat(2,1fr); } }
+  /* skills */
+  .skills{ display:flex; gap:7px; flex-wrap:wrap; }
+  .skills span{ font-family:"IBM Plex Sans",sans-serif; font-size:.78rem;
+    border:1px solid var(--rule); border-radius:3px; padding:4px 9px; color:var(--body); }
 
-  /* ================= principles ================= */
-  ol.principles{ list-style:none; margin:0; padding:0; counter-reset:p; }
-  ol.principles li{ counter-increment:p; padding:0 0 28px; margin-bottom:28px;
-    border-bottom:1px solid var(--rule-soft); }
-  ol.principles li:last-child{ border-bottom:none; margin-bottom:0; padding-bottom:0; }
-  ol.principles li:before{ content:counter(p,decimal-leading-zero);
-    font-family:"IBM Plex Mono",monospace; font-size:.66rem; letter-spacing:.14em;
-    color:var(--accent); display:block; margin-bottom:8px; }
-  ol.principles strong{ color:var(--ink); font-weight:600; }
-  ol.principles p{ margin:0; }
-
-  /* ================= stack + contact ================= */
-  dl.stack{ margin:0; }
-  dl.stack > div{ display:flex; gap:22px; padding:13px 0; border-bottom:1px solid var(--rule-soft); align-items:baseline; }
-  dl.stack > div:last-child{ border-bottom:none; }
-  dl.stack dt{ flex:0 0 9.5rem; color:var(--muted); }
-  dl.stack dd{ margin:0; font-size:1rem; }
-
-  .contact p{ font-size:1.12rem; }
-  .contact .lines{ margin-top:26px; }
-  .contact .lines div{ display:flex; gap:22px; padding:11px 0; border-bottom:1px solid var(--rule-soft); align-items:baseline; }
-  .contact .lines > div:last-child{ border-bottom:none; }
-  .contact .lines span{ flex:0 0 9.5rem; color:var(--muted); }
-
-  footer{ margin-top:90px; padding:24px 0 64px; border-top:1px solid var(--rule); color:var(--muted); }
-  footer .wide{ display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+  footer{ margin-top:80px; padding:20px 0 56px; border-top:1px solid var(--rule); color:var(--muted); }
+  footer .wrap{ display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap; }
 
   @media (max-width:640px){
-    body{ font-size:18px; }
-    .hero{ padding-top:56px; }
-    section{ padding-top:74px; }
-    dl.stack > div, .contact .lines div{ display:block; }
-    dl.stack dt, .contact .lines span{ margin-bottom:4px; display:block; }
-    .app .ctx{ gap:14px; }
+    body{ font-size:17px; }
+    .hero{ padding-top:44px; }
+    section{ padding-top:56px; }
+    .band{ padding:20px 18px; }
   }
 </style>
 </head>
 <body>
 
 <div class="topbar">
-  <div class="wide">
-    <span class="mono">Hilal Sinem Sayar</span>
+  <div class="wrap">
+    <span class="mono nm">Hilal Sinem Sayar</span>
     <nav class="mono">
+      <a href="#about">About</a>
       <a href="#work">Work</a>
-      <a href="#earlier">Earlier</a>
-      <a href="#how">How I work</a>
+      <a href="#case">Case study</a>
+      <a href="#resume">Resume</a>
+      <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="progress" id="prog"></div>
@@ -353,72 +303,101 @@
 
 <div class="wrap">
   <header class="hero">
-    <span class="badge mono">Product owner and software engineer · İzmir</span>
     <h1 id="h1">
-      <span class="line"><span>I design, spec and build</span></span>
-      <span class="line"><span>the finance, project</span></span>
-      <span class="line"><span>and HR side of an <i>ERP</i>.</span></span>
+      <span class="line"><span>Hilal Sinem Sayar</span></span>
+      <span class="line"><span>Product Owner · <i>Software Engineer</i></span></span>
     </h1>
-    <p class="role">Multi-tenant ERP sold to engineering and contracting firms.</p>
-
-    <p class="first">I run the discovery and the market comparison, write the spec, the acceptance criteria
-    and the test cases, sit in grooming with the team, and write a large part of the code. The systems I work
-    on decide how money gets committed inside a company, so a requirements gap there doesn't show up as a
-    bug. It shows up as a number in a report that nobody can explain.</p>
-
-    <p>Doing both halves is the point rather than an accident. I'd rather find out a design is wrong by
-    modelling it against real production data than by shipping it and watching, and I can usually get to
-    that answer myself. Most of what follows is an example of it.</p>
+    <p class="tagline">Finance, project and HR modules of a multi-tenant ERP. İzmir, Türkiye.</p>
+    <div class="heroLinks mono">
+      <a href="case-study-prq.pdf">Case study, PDF</a>
+      <a href="mailto:hilalsinemsayar@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/hilalsinemsayar/">LinkedIn</a>
+      <a href="https://github.com/hilalsinem">GitHub</a>
+    </div>
   </header>
 </div>
 
-<div class="wrap">
-  <div class="pipe rv" id="pipe">
-    <div class="track">
-      <div class="st"><span class="fill"></span><b>Submitted</b></div>
-      <div class="st"><span class="fill"></span><b>Department</b></div>
-      <div class="st"><span class="fill"></span><b>Purchasing</b></div>
-      <div class="st"><span class="fill"></span><b>Finance</b></div>
-    </div>
-    <p class="cap">Every requisition walks this. My job is to make sure it never stops somewhere nobody can see.</p>
-  </div>
-</div>
-
-<!-- ============================ WORK ============================ -->
-<section id="work">
-  <div class="wrap"><h2 class="sechead mono rv">Selected work</h2></div>
-
-  <!-- 01 -->
+<!-- ===== 01 ABOUT ===== -->
+<section id="about">
   <div class="wrap">
-    <article>
-      <span class="kicker mono rv">01 / 2026 · shipped to pilot</span>
-      <h2 class="rv">Project budget control, end to end</h2>
-      <p class="meta rv">Discovery, market comparison, product decisions, spec, rollout</p>
-
-      <p class="rv">A site engineer raises a request, the request consumes project budget, the budget
-      position decides which approval route it takes, and finance reports on what was spent and against what.
-      On the legacy platform those four things lived in four places and agreed with each other only by
-      accident. Each part worked. The seam between them was where the money went missing.</p>
-
-      <p class="rv">Discovery put numbers on it. Across eighteen months of production data, 31% of request
-      lines were creating a brand-new material record, and 68% of those duplicated an item that already
-      existed, so category spend was a guess rather than a figure. Interviews explained why: searching the
-      catalogue took longer than typing the item name, so people typed it. The data problem and the usability
-      problem were one problem seen from opposite ends.</p>
-
-      <p class="rv">I also looked at how three competing ERP products in this segment handle the same domain,
-      through their documentation, demo environments and release notes. Every one of them treats an
-      over-budget request as an exception to be blocked or overridden by a privileged user, and every one
-      shows budget as a report on a separate screen. Neither is a technical limitation. Both are old
-      decisions nobody revisited, which is where the opening was.</p>
-    </article>
+    <div class="sechead rv"><span class="n mono">01</span><h2>About</h2></div>
+    <div class="row rv" style="border-bottom:none; padding-top:0">
+      <div class="side mono">In short</div>
+      <div>
+        <p>I own the finance, project and HR side of an ERP sold to engineering and contracting firms.
+        I run the discovery and the market comparison, write the spec and the test cases, and write a
+        large part of the code.</p>
+        <p>The systems I work on decide how money gets committed inside a company, so a requirements gap
+        does not show up as a bug. It shows up as a number nobody can explain.</p>
+        <div class="tags">
+          <span>Discovery</span><span>Market research</span><span>PRD</span><span>Acceptance criteria</span>
+          <span>Test cases</span><span>Agile</span><span>C# / .NET</span><span>React</span><span>SQL Server</span>
+        </div>
+      </div>
+    </div>
   </div>
+</section>
 
-  <div class="wide">
+<!-- ===== 02 WORK ===== -->
+<section id="work">
+  <div class="wrap">
+    <div class="sechead rv"><span class="n mono">02</span><h2>Work</h2></div>
+
+    <div class="row rv">
+      <div class="side mono">Finance · Project<br>2026</div>
+      <div>
+        <h3>Project budget control</h3>
+        <p class="sub">Request, commitment, approval and reporting in one flow</p>
+        <p>Four steps that used to live on four screens and agree only by accident. Budget is now visible
+        at the moment of the decision, and over-budget routes to different approvers instead of being blocked.</p>
+        <a class="more" href="#case">Full case study below →</a>
+      </div>
+    </div>
+
+    <div class="row rv">
+      <div class="side mono">Platform</div>
+      <div>
+        <h3>Approval engine, outcome model</h3>
+        <p class="sub">Steps that hand structured data back to the module</p>
+        <p>The engine owns whether something was approved. The module owns what stage it is in. Holding that
+        line let five other modules keep their integrations untouched while the engine grew.</p>
+      </div>
+    </div>
+
+    <div class="row rv">
+      <div class="side mono">AI add-on</div>
+      <div>
+        <h3>Natural-language record creation</h3>
+        <p class="sub">Describe what you need, review the draft, submit it yourself</p>
+        <p>The assistant proposes a filled form and never writes to the database. Piloted on the budget flow
+        because a wrong suggestion there costs ten seconds, not a mis-posted financial record.</p>
+      </div>
+    </div>
+
+    <div class="row rv">
+      <div class="side mono">HR</div>
+      <div>
+        <h3>Blue-collar timesheet</h3>
+        <p class="sub">Legacy and new data under one approval model</p>
+        <p>Supervisors approve a day rather than a scatter of rows, over a view that unifies two data models
+        so the seam is invisible to the person doing the work.</p>
+      </div>
+    </div>
+
+    <div class="row rv">
+      <div class="side mono">Project docs</div>
+      <div>
+        <h3>Transmittal management</h3>
+        <p class="sub">Migration in deltas, print templates, follow-up, write-back</p>
+        <p>The part that changed people's days was the follow-up screen. Before it existed, "where is this
+        document" was a phone call.</p>
+      </div>
+    </div>
+
     <figure class="rv">
       <button class="replay" data-replay="prq">Replay</button>
       <div class="card app" id="prq">
-        <div class="bar">Purchase Requisition · New
+        <div class="bar">Purchase request · New
           <span class="btns"><span>Save</span><span class="primary">Submit</span></span></div>
         <div class="ctx"><div>Project <b>Block B, Mechanical</b></div><div>Company <b>from session</b></div></div>
         <div class="bd">
@@ -430,15 +409,10 @@
             <div>Used<b data-pct>0%</b></div>
           </div>
           <div class="track2"><i></i></div>
-          <div class="effect">This requisition <b data-amt>64,200</b> · remaining after submit
-            <b data-left>92,800</b></div>
-
-          <div class="warnbox">
-            <b>42,000 over the remaining project budget.</b>
-            <span class="route">Submitting routes this to Directorate approval instead of your department manager.</span>
-          </div>
-
-          <div class="lbl" style="margin-top:16px">Lines</div>
+          <div class="effect">This request <b data-amt>64,200</b> · remaining after submit <b data-left>92,800</b></div>
+          <div class="warnbox"><b>42,000 over the remaining project budget.</b>
+            <span class="route">Submitting routes this to Directorate approval instead of your department manager.</span></div>
+          <div class="lbl" style="margin-top:15px">Lines</div>
           <div class="srch">
             <div class="inp"><span data-type></span><span class="car"></span></div>
             <div class="opt sel"><span><code>CEM-042</code>Portland Cement 42.5R, 50 kg bag</span><em>Used on this project</em></div>
@@ -452,438 +426,264 @@
           </table>
         </div>
       </div>
-      <figcaption>The requisition form. The budget strip answers the single most common complaint from
-      discovery before the user acts, rather than three days later in a rejection.</figcaption>
+      <figcaption>Budget in view at the moment of the decision, and a stated consequence when the request goes over.</figcaption>
+    </figure>
+
+    <div class="grid2" style="margin-top:8px">
+      <figure class="rv">
+        <button class="replay" data-replay="asst">Replay</button>
+        <div class="card asst" id="asst">
+          <div class="prompt"><span data-say></span><span class="car"></span></div>
+          <div class="out">
+            <div class="fld"><span>Project</span><b>Block B, Mechanical</b></div>
+            <div class="fld"><span>Line 1</span><b>CEM-042 · 20 bag</b></div>
+            <div class="fld"><span>Line 2</span><b>INS-113 · 5 roll</b></div>
+            <div class="fld"><span>Need by</span><b>Wednesday, 23 Sep</b></div>
+          </div>
+          <div class="foot"><span>Proposed draft · editable</span><b>0 database writes</b></div>
+        </div>
+        <figcaption>The AI add-on proposes, the person submits.</figcaption>
+      </figure>
+
+      <figure class="rv">
+        <div class="card sheet" id="sheet">
+          <div class="dayhdr"><span>Tue 15 Sep · Block B site</span><span class="st">Approve day</span></div>
+          <div class="wrow"><span class="tick"></span><span class="nm">M. Yıldız</span><span class="hrs">9.0 h</span><span class="src">New</span></div>
+          <div class="wrow"><span class="tick"></span><span class="nm">A. Kaya</span><span class="hrs">9.0 + 2.0 OT</span><span class="src">New</span></div>
+          <div class="wrow"><span class="tick"></span><span class="nm">S. Demir</span><span class="hrs">8.0 h</span><span class="src">Legacy</span></div>
+          <div class="wrow"><span class="tick"></span><span class="nm">R. Aydın</span><span class="hrs">9.0 h</span><span class="src">Legacy</span></div>
+        </div>
+        <figcaption>One approval, four records, two data models.</figcaption>
+      </figure>
+    </div>
+
+    <figure class="rv">
+      <div class="card diagram" id="diag">
+        <svg viewBox="0 0 700 165" role="img" aria-label="Approval engine outcome model">
+          <g font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.4"
+             fill="currentColor" opacity=".5" text-anchor="middle">
+            <text x="82" y="22">MODULE</text><text x="350" y="22">APPROVAL ENGINE</text><text x="618" y="22">MODULE</text>
+          </g>
+          <g class="dnode d1">
+            <rect x="14" y="40" width="136" height="52" rx="5" fill="none" stroke="currentColor" stroke-opacity=".3"/>
+            <text x="82" y="64" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="currentColor" font-weight="600">Request</text>
+            <text x="82" y="80" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor" opacity=".6">submitted</text>
+          </g>
+          <path class="dpath p1" style="--len:60" d="M156 66 H 210" stroke="var(--blue)" stroke-width="1.6" fill="none"/>
+          <path d="M210 66 l -7 -3.5 v 7 z" fill="var(--blue)" class="dnode d2"/>
+          <g class="dnode d2">
+            <rect x="216" y="40" width="122" height="52" rx="5" fill="var(--blue)" fill-opacity=".1" stroke="var(--blue)" stroke-opacity=".5"/>
+            <text x="277" y="64" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="currentColor" font-weight="600">Step 1</text>
+            <text x="277" y="80" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="var(--blue)">collects: approver</text>
+          </g>
+          <path class="dpath p2" style="--len:56" d="M344 66 H 396" stroke="var(--blue)" stroke-width="1.6" fill="none"/>
+          <path d="M396 66 l -7 -3.5 v 7 z" fill="var(--blue)" class="dnode d3"/>
+          <g class="dnode d3">
+            <rect x="402" y="40" width="122" height="52" rx="5" fill="var(--blue)" fill-opacity=".1" stroke="var(--blue)" stroke-opacity=".5"/>
+            <text x="463" y="64" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="currentColor" font-weight="600">Step 2</text>
+            <text x="463" y="80" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="var(--blue)">fixed: status value</text>
+          </g>
+          <path class="dpath p3" style="--len:58" d="M530 66 H 584" stroke="var(--blue)" stroke-width="1.6" fill="none"/>
+          <path d="M584 66 l -7 -3.5 v 7 z" fill="var(--blue)" class="dnode d4"/>
+          <g class="dnode d4">
+            <rect x="590" y="40" width="96" height="52" rx="5" fill="none" stroke="currentColor" stroke-opacity=".3"/>
+            <text x="638" y="64" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="currentColor" font-weight="600">Outcome</text>
+            <text x="638" y="80" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor" opacity=".6">merged</text>
+          </g>
+          <path class="dpath back" style="--len:640" d="M638 100 V 132 H 82 V 100"
+                stroke="var(--accent)" stroke-width="1.6" fill="none" stroke-dasharray="4 4"/>
+          <path d="M82 100 l -3.5 7 h 7 z" fill="var(--accent)" class="dnode d4"/>
+          <text x="360" y="127" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9"
+                letter-spacing="1.2" fill="var(--accent)" class="dnode d4">THE MODULE DECIDES WHAT IT MEANS</text>
+          <rect x="204" y="30" width="332" height="72" rx="7" fill="none" stroke="currentColor"
+                stroke-opacity=".16" stroke-dasharray="3 4" class="dnode d1"/>
+        </svg>
+      </div>
+      <figcaption>The boundary that kept the other modules' approval integrations untouched.</figcaption>
     </figure>
   </div>
+</section>
 
+<!-- ===== 03 CASE STUDY ===== -->
+<section id="case">
   <div class="wrap">
-    <article>
-      <div class="pull rv">The finding that killed our first design: 17% of real requests were over budget.
-      Blocking them, the obvious thing to do and what every competitor does, would have broken one in six
-      real requests. Over-budget isn't an error state. It's a different approval route.</div>
+    <div class="sechead rv"><span class="n mono">03</span><h2>Case study</h2></div>
 
-      <p class="rv">Budget is consumed at submit rather than at approval, because two requisitions each
-      within the remaining balance can both pass approval and jointly exceed it, and nothing in the system
-      would have caught it. The consumed amount and its currency are stored on the requisition, so a refund
-      on rejection is exact even after the rate moves.</p>
-    </article>
-  </div>
+    <div class="band rv">
+      <h3>Project budget control</h3>
+      <p class="sub">Product requirements and business analysis · 7 pages</p>
+      <p>Discovery across eighteen months of production data and nine interviews, a comparison of three
+      competing ERP products, the product decisions with the alternatives rejected, wireframes, acceptance
+      criteria, test cases, instrumentation and a phased rollout.</p>
 
-  <div class="wide">
+      <div class="kpis">
+        <div><b data-count="31" data-suffix="%">0</b><span>Lines creating duplicate material records</span></div>
+        <div><b data-count="17" data-suffix="%">0</b><span>Requests legitimately over budget</span></div>
+        <div><b data-count="22" data-suffix="%">0</b><span>Returned for correction</span></div>
+        <div><b data-count="9">0</b><span>Discovery interviews</span></div>
+      </div>
+
+      <a class="more" href="case-study-prq.pdf">Read the document (PDF) →</a>
+    </div>
+
     <figure class="rv">
       <div class="card chart" id="chart">
-        <div class="crow">
-          <div class="cl"><span class="cname">Lines creating a new material record</span>
-            <span class="cval">31% <b>→ 3%</b></span></div>
-          <div class="bar2"><span class="was" data-w="62"></span><span class="now" data-w="6"></span></div>
-        </div>
-        <div class="crow">
-          <div class="cl"><span class="cname">Median time to submit</span>
-            <span class="cval">6 min 10 s <b>→ 3 min</b></span></div>
-          <div class="bar2"><span class="was" data-w="74"></span><span class="now" data-w="36"></span></div>
-        </div>
-        <div class="crow">
-          <div class="cl"><span class="cname">Requisitions returned for correction</span>
-            <span class="cval">22% <b>→ 10%</b></span></div>
-          <div class="bar2"><span class="was" data-w="44"></span><span class="now" data-w="20"></span></div>
-        </div>
-        <div class="crow">
-          <div class="cl"><span class="cname">Median submit to final approval</span>
-            <span class="cval">3.1 days <b>→ 1.5 days</b></span></div>
-          <div class="bar2"><span class="was" data-w="56"></span><span class="now" data-w="27"></span></div>
-        </div>
+        <div class="crow"><div class="cl"><span class="cname">Lines creating a new material record</span>
+          <span class="cval">31% <b>→ 3%</b></span></div>
+          <div class="bar2"><span class="was" data-w="62"></span><span class="now" data-w="6"></span></div></div>
+        <div class="crow"><div class="cl"><span class="cname">Median time to submit</span>
+          <span class="cval">6 min 10 s <b>→ 3 min</b></span></div>
+          <div class="bar2"><span class="was" data-w="74"></span><span class="now" data-w="36"></span></div></div>
+        <div class="crow"><div class="cl"><span class="cname">Returned for correction</span>
+          <span class="cval">22% <b>→ 10%</b></span></div>
+          <div class="bar2"><span class="was" data-w="44"></span><span class="now" data-w="20"></span></div></div>
+        <div class="crow"><div class="cl"><span class="cname">Median submit to final approval</span>
+          <span class="cval">3.1 days <b>→ 1.5 days</b></span></div>
+          <div class="bar2"><span class="was" data-w="56"></span><span class="now" data-w="27"></span></div></div>
         <div class="legend">
           <span><i style="background:var(--rule)"></i>Legacy baseline</span>
           <span><i style="background:var(--blue)"></i>Target, committed before build</span>
         </div>
       </div>
-      <figcaption>Every target carries a counter-metric. Making the catalogue mandatory would have improved
-      the first bar and wrecked the second, which is exactly why the second one is on the chart.</figcaption>
+      <figcaption>Every target carries a counter-metric. Figures are rounded for sharing.</figcaption>
     </figure>
   </div>
+</section>
 
+<!-- ===== 04 RESUME ===== -->
+<section id="resume">
   <div class="wrap">
-    <article>
-      <p class="artifacts mono rv">Produced · <b>discovery report</b> · <b>market comparison</b> · <b>PRD</b>
-      · <b>acceptance criteria</b> · <b>test cases</b> · <b>instrumentation plan</b> · <b>phased rollout</b></p>
-      <a class="readmore rv" href="case-study-prq.pdf">Read the full document (PDF, 7 pages) →</a>
-    </article>
-  </div>
+    <div class="sechead rv"><span class="n mono">04</span><h2>Resume</h2></div>
 
-  <!-- 02 -->
-  <div class="wrap" style="padding-top:96px">
-    <article>
-      <span class="kicker mono rv">02 / platform infrastructure</span>
-      <h2 class="rv">An approval engine that hands data back</h2>
-      <p class="meta rv">Problem framing, interface design, cross-module negotiation</p>
-
-      <p class="rv">Our approval engine could record that something had been approved. It could not carry
-      anything <em>produced</em> during the approval, such as who the next approver should be or which status
-      the record ought to land in. Every module was working around it, each in a different way.</p>
-
-      <p class="rv">I specified an outcome model. A step declares what it collects, the engine hands those
-      values back, and the requesting module decides what they mean. Some values are fixed in the
-      configuration and never shown to the approver at all, which is how a status transition became a
-      setting rather than a release.</p>
-    </article>
-  </div>
-
-  <div class="wide">
-    <figure class="rv">
-      <div class="card diagram" id="diag">
-        <svg viewBox="0 0 700 190" role="img" aria-label="Approval engine outcome model diagram">
-          <g font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.4"
-             fill="currentColor" opacity=".55" text-anchor="middle">
-            <text x="82" y="26">MODULE</text>
-            <text x="350" y="26">APPROVAL ENGINE</text>
-            <text x="618" y="26">MODULE</text>
-          </g>
-
-          <g class="dnode d1">
-            <rect x="14" y="44" width="136" height="56" rx="5" fill="none" stroke="currentColor" stroke-opacity=".3"/>
-            <text x="82" y="70" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="12"
-                  fill="currentColor" font-weight="600">Requisition</text>
-            <text x="82" y="87" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="10.5"
-                  fill="currentColor" opacity=".6">submitted</text>
-          </g>
-
-          <path class="dpath p1" style="--len:60" d="M156 72 H 210" stroke="var(--blue)" stroke-width="1.6" fill="none"/>
-          <path d="M210 72 l -7 -3.5 v 7 z" fill="var(--blue)" class="dnode d2"/>
-
-          <g class="dnode d2">
-            <rect x="216" y="44" width="122" height="56" rx="5" fill="var(--blue)" fill-opacity=".1"
-                  stroke="var(--blue)" stroke-opacity=".5"/>
-            <text x="277" y="70" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="12"
-                  fill="currentColor" font-weight="600">Step 1</text>
-            <text x="277" y="87" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5"
-                  fill="var(--blue)">collects: approver</text>
-          </g>
-
-          <path class="dpath p2" style="--len:56" d="M344 72 H 396" stroke="var(--blue)" stroke-width="1.6" fill="none"/>
-          <path d="M396 72 l -7 -3.5 v 7 z" fill="var(--blue)" class="dnode d3"/>
-
-          <g class="dnode d3">
-            <rect x="402" y="44" width="122" height="56" rx="5" fill="var(--blue)" fill-opacity=".1"
-                  stroke="var(--blue)" stroke-opacity=".5"/>
-            <text x="463" y="70" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="12"
-                  fill="currentColor" font-weight="600">Step 2</text>
-            <text x="463" y="87" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5"
-                  fill="var(--blue)">fixed: status value</text>
-          </g>
-
-          <path class="dpath p3" style="--len:58" d="M530 72 H 584" stroke="var(--blue)" stroke-width="1.6" fill="none"/>
-          <path d="M584 72 l -7 -3.5 v 7 z" fill="var(--blue)" class="dnode d4"/>
-
-          <g class="dnode d4">
-            <rect x="590" y="44" width="96" height="56" rx="5" fill="none" stroke="currentColor" stroke-opacity=".3"/>
-            <text x="638" y="70" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="12"
-                  fill="currentColor" font-weight="600">Outcome</text>
-            <text x="638" y="87" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="10.5"
-                  fill="currentColor" opacity=".6">merged</text>
-          </g>
-
-          <path class="dpath back" style="--len:640"
-                d="M638 108 V 146 H 82 V 108"
-                stroke="var(--accent)" stroke-width="1.6" fill="none" stroke-dasharray="4 4"/>
-          <path d="M82 108 l -3.5 7 h 7 z" fill="var(--accent)" class="dnode d4"/>
-          <text x="360" y="141" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9"
-                letter-spacing="1.2" fill="var(--accent)" class="dnode d4">THE MODULE DECIDES WHAT IT MEANS</text>
-
-          <rect x="204" y="34" width="332" height="76" rx="7" fill="none" stroke="currentColor"
-                stroke-opacity=".16" stroke-dasharray="3 4" class="dnode d1"/>
-          <text x="350" y="172" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="11"
-                fill="currentColor" opacity=".55" class="dnode d4">
-            The engine owns "was this approved". The module owns "what stage is it in".</text>
-        </svg>
+    <div class="row rv">
+      <div class="side mono">Now</div>
+      <div>
+        <h3>Product Owner · Software Engineer</h3>
+        <p class="sub">Multi-tenant ERP for engineering and contracting firms</p>
+        <p>Own the finance, project and HR modules end to end: discovery, market research, specs and
+        acceptance criteria, grooming and sprint planning, and a large share of the implementation.</p>
       </div>
-      <figcaption>The boundary I held through the whole design. Keeping it is the reason five other modules'
-      approval integrations did not have to change when the engine grew.</figcaption>
-    </figure>
-  </div>
+    </div>
 
-  <div class="wrap">
-    <article>
-      <p class="rv">The same work surfaced a quieter problem. A permission check on an unrelated screen was
-      silently letting some users skip approval altogether: the button fell back to a plain save instead of a
-      submit, and nothing anywhere said so. It is now a test case, because a fix that only lives in the
-      interface is not a fix.</p>
-    </article>
-  </div>
-
-  <!-- 03 -->
-  <div class="wrap" style="padding-top:96px">
-    <article>
-      <span class="kicker mono rv">03 / AI add-on</span>
-      <h2 class="rv">Natural-language record creation</h2>
-      <p class="meta rv">Pilot scoping, safety design, stop criteria</p>
-
-      <p class="rv">The strategic bet on our platform is that a user describes what they need and the system
-      fills the form. I ran the pilot on purchase requisitions, because that is where a wrong suggestion is
-      cheapest: the assistant never writes to the database, a person always reviews and submits, and a bad
-      draft costs ten seconds rather than a mis-posted financial record.</p>
-    </article>
-  </div>
-
-  <div class="wide">
-    <figure class="rv">
-      <button class="replay" data-replay="asst">Replay</button>
-      <div class="card asst" id="asst">
-        <div class="prompt"><span data-say></span><span class="car"></span></div>
-        <div class="out">
-          <div class="fld"><span>Project</span><b>Block B, Mechanical</b></div>
-          <div class="fld"><span>Line 1</span><b>CEM-042 · Portland Cement 42.5R · 20 bag</b></div>
-          <div class="fld"><span>Line 2</span><b>INS-113 · Glass wool roll 5 cm · 5 roll</b></div>
-          <div class="fld"><span>Need by</span><b>Wednesday, 23 Sep</b></div>
-          <div class="fld"><span>Unit price</span><b style="opacity:.5">not proposed, by design</b></div>
-        </div>
-        <div class="foot"><span>Proposed draft · editable · nothing saved</span><b>0 database writes</b></div>
+    <div class="row rv">
+      <div class="side mono">2019 to 2025</div>
+      <div>
+        <h3>İzmir University of Economics</h3>
+        <p class="sub">B.Sc. Computer Engineering · High Honor · GPA 3.61</p>
       </div>
-      <figcaption>The assistant returns the same payload the form already submits. The person reviews it and
-      presses submit, so there is one validation path, one audit trail and one human accountable.</figcaption>
-    </figure>
-  </div>
+    </div>
 
-  <div class="wrap">
-    <article>
-      <h3 class="rv">Three things we learned by running it, not by planning it</h3>
-      <p class="rv">Material groups are stored in English while the users speak Turkish, so searching them by
-      text failed at the language boundary. Handing over the full list and letting the model do the matching
-      removed the failure entirely.</p>
-      <p class="rv">Row-level permissions filter silently, so the assistant once told someone their company
-      had no requisitions when it simply could not see them. Empty results now carry an instruction to state
-      the limitation rather than conclude absence.</p>
-      <p class="rv">And reasons beat prohibitions. <em>"The user already sees the table"</em> stopped it
-      re-listing rows where <em>"do not repeat the rows"</em> never had.</p>
-
-      <div class="pull rv">Before the pilot ran I agreed a stopping rule with the CTO. Below 35% acceptance
-      we say the value is in the tool layer rather than the chat surface, and we stop, instead of keeping a
-      feature alive because it demos well.</div>
-    </article>
-  </div>
-
-  <!-- 04 -->
-  <div class="wrap" style="padding-top:96px">
-    <article>
-      <span class="kicker mono rv">04 / in production</span>
-      <h2 class="rv">Blue-collar timesheet, restructured</h2>
-      <p class="meta rv">Legacy and new data under one approval model</p>
-
-      <p class="rv">Site supervisors were approving hours across two data models, one inherited and one new,
-      reconciling them by eye. I restructured the module around a day-header approval: a supervisor approves
-      a day rather than a scatter of rows, over a view that unifies legacy and new records so the seam is
-      invisible to the person doing the work.</p>
-    </article>
-  </div>
-
-  <div class="wide">
-    <figure class="rv">
-      <div class="card sheet" id="sheet">
-        <div class="dayhdr"><span>Tuesday, 15 September · Block B site</span><span class="st">Approve day</span></div>
-        <div class="wrow"><span class="tick"></span><span class="nm">M. Yıldız</span><span class="hrs">9.0 h</span><span class="src">New</span></div>
-        <div class="wrow"><span class="tick"></span><span class="nm">A. Kaya</span><span class="hrs">9.0 h + 2.0 OT</span><span class="src">New</span></div>
-        <div class="wrow"><span class="tick"></span><span class="nm">S. Demir</span><span class="hrs">8.0 h</span><span class="src">Legacy</span></div>
-        <div class="wrow"><span class="tick"></span><span class="nm">R. Aydın</span><span class="hrs">9.0 h</span><span class="src">Legacy</span></div>
+    <div class="row rv">
+      <div class="side mono">Product</div>
+      <div class="skills">
+        <span>Discovery interviews</span><span>Market research</span><span>PRD and BA documents</span>
+        <span>User stories</span><span>Acceptance criteria</span><span>Test cases</span>
+        <span>Backlog and grooming</span><span>Two-week sprints</span><span>Phased rollout</span>
       </div>
-      <figcaption>One approval, four records, two data models. The architecture document behind this is on
-      its third revision, which I maintain so the next person inherits the reasoning and not only the schema.</figcaption>
-    </figure>
-  </div>
+    </div>
 
-  <!-- 05 -->
-  <div class="wrap" style="padding-top:96px">
-    <article>
-      <span class="kicker mono rv">05 / in production</span>
-      <h2 class="rv">Transmittal management, end to end</h2>
-      <p class="meta rv">Migration, print templates, follow-up, write-back</p>
+    <div class="row rv">
+      <div class="side mono">Engineering</div>
+      <div class="skills">
+        <span>C# / .NET</span><span>React / TypeScript</span><span>SQL Server, Dapper</span>
+        <span>Python</span><span>Flutter</span><span>Kotlin / Android</span>
+        <span>TensorFlow</span><span>Firebase</span><span>LLM function calling</span>
+      </div>
+    </div>
 
-      <p class="rv">Document transmittals moving between the legacy platform and the new one: print
-      templates, migration in deltas rather than one cut, sync triggers, and a write-back path so the two
-      systems stop disagreeing with each other. The part that changed people's days was the follow-up
-      screen. Before it existed, "where is this document" was a phone call.</p>
-    </article>
-  </div>
-
-  <div class="wrap">
-    <div class="stats rv">
-      <div><b data-count="5">0</b><span>Modules owned</span></div>
-      <div><b data-count="18">0</b><span>Months of data analysed</span></div>
-      <div><b data-count="9">0</b><span>Discovery interviews</span></div>
-      <div><b data-count="3" data-suffix="+">0</b><span>Tenants in production</span></div>
+    <div class="row rv">
+      <div class="side mono">Languages</div>
+      <div class="skills"><span>Turkish, native</span><span>English, professional</span></div>
     </div>
   </div>
 </section>
 
-<!-- ============================ GRADLY ============================ -->
-<section>
+<!-- ===== 05 PROJECTS ===== -->
+<section id="projects">
   <div class="wrap">
-    <h2 class="sechead mono rv">Something of my own</h2>
-    <article>
-      <h2 class="rv">Gradly</h2>
-      <p class="meta rv">A platform for master's applications, built from the problem statement out</p>
-      <p class="rv">Everything above happens inside a company that already has customers, a backlog, and
-      people who will tell me when I'm wrong. Gradly has none of that, which is the point of building it.
-      Scoping a first version turns out to be much harder when there is nobody else in the room to say no,
-      and I've learned more about prioritisation from cutting my own ideas than from defending anyone
-      else's.</p>
-    </article>
-  </div>
-</section>
+    <div class="sechead rv"><span class="n mono">05</span><h2>Projects</h2></div>
 
-<!-- ============================ EARLIER ============================ -->
-<section id="earlier">
-  <div class="wrap">
-    <h2 class="sechead mono rv">Before the ERP</h2>
-
-    <article class="rv">
-      <span class="kicker mono">Product case study · Wizardio / SCW.AI</span>
-      <h2>Supply chain analytics</h2>
-      <p class="meta">User stories, acceptance criteria, backlog, sprint planning</p>
-      <p>A product case study on a manufacturing analytics platform, focused on usability and monitoring:
-      an in-context tooltip system, dashboard filtering, anomaly alerts, and a data distribution report.
-      I wrote the user stories and acceptance criteria, worked the backlog and sprint plan, and ran it
-      across customer success, design and engineering. It is the first place I had to defend a scope cut
-      to three different audiences in the same week.</p>
-    </article>
-
-    <article class="rv" style="border-top:1px solid var(--rule-soft); padding-top:30px; margin-top:8px">
-      <span class="kicker mono">Graduation project · Python, ML, Flutter, Firebase</span>
-      <h2>Tarifeni Bul</h2>
-      <p class="meta">AI-based mobile tariff recommendation</p>
-      <p>An app that reads a person's past mobile data usage, forecasts what they will need next month, and
-      recommends the cheapest package across Turkish operators. A time-series model in Python behind a
-      Flutter interface, with Firebase underneath. The interesting part was not the model. It was deciding
-      how much of its uncertainty to show someone who just wants to know which package to buy.</p>
-    </article>
-
-    <article class="rv" style="border-top:1px solid var(--rule-soft); padding-top:30px; margin-top:8px">
-      <span class="kicker mono">Research · Android, BLE, ML</span>
-      <h2>SISMOS</h2>
-      <p class="meta">Emergency Bluetooth tracker for post-disaster search</p>
-      <p>An Android tool that estimates distance from Bluetooth signal strength using a trained model, to
-      help locate people trapped under rubble after an earthquake. Built for field conditions, so low power
-      draw and a reading a rescuer can act on mattered more than accuracy on paper.</p>
-    </article>
-  </div>
-</section>
-
-<!-- ============================ EDUCATION ============================ -->
-<section id="education">
-  <div class="wrap">
-    <h2 class="sechead mono rv">Education</h2>
-    <dl class="stack">
-      <div class="rv"><dt class="mono">2019 to 2025</dt><dd><strong>İzmir University of Economics</strong><br>
-        B.Sc. Computer Engineering, High Honor, GPA 3.61</dd></div>
-      <div class="rv"><dt class="mono">Based in</dt><dd>İzmir, Türkiye</dd></div>
-    </dl>
-  </div>
-</section>
-
-<!-- ============================ HOW I WORK ============================ -->
-<section id="how">
-  <div class="wrap">
-    <h2 class="sechead mono rv">How I work</h2>
-    <ol class="principles">
-      <li class="rv"><p><strong>The brief is not the problem statement.</strong> "Rebuild purchase requests"
-      was a sentence about scope. The problem was that people were bypassing a catalogue because it was
-      slower than typing, and it took two weeks of data and nine interviews to be able to say that out loud.</p></li>
-
-      <li class="rv"><p><strong>Every decision gets written down with the alternative we rejected.</strong>
-      Not to look rigorous. So that when someone reopens it three sprints later, we're arguing about new
-      information rather than re-running the old argument.</p></li>
-
-      <li class="rv"><p><strong>Look outside before designing.</strong> For the budget work I went through
-      three competing ERP products and asked our two closest customers what they had used before and why
-      they left. The most useful thing it gave me was not a feature list. It was the confidence that a
-      behaviour everyone shipped was a habit rather than a requirement.</p></li>
-
-      <li class="rv"><p><strong>Every target metric gets a counter-metric.</strong> Making the catalogue
-      mandatory would have improved data quality and wrecked entry speed. If I hadn't been measuring time to
-      submit, that would have shipped as a success.</p></li>
-
-      <li class="rv"><p><strong>Settle arguments with a model, not with seniority.</strong> Finance wanted
-      budget consumed on approval, purchasing wanted it on submit, and two weeks of opinion-trading had
-      settled nothing. I took two real requisitions from the legacy data, each individually within budget and
-      jointly over it, and showed there was no point at which the approval-time model would have flagged
-      either. That ended it in one meeting.</p></li>
-
-      <li class="rv"><p><strong>Done means demonstrable.</strong> Ready means acceptance criteria written,
-      test cases drafted, and no open question with a blocking owner. Done means it runs on the pilot
-      environment and the events we said we'd measure are actually emitting.</p></li>
-    </ol>
-  </div>
-</section>
-
-<!-- ============================ STACK ============================ -->
-<section>
-  <div class="wrap">
-    <h2 class="sechead mono rv">What I work with</h2>
-    <dl class="stack">
-      <div class="rv"><dt class="mono">Product</dt><dd>Discovery interviews · production-data analysis · PRDs and business analysis documents · acceptance criteria · test cases · instrumentation and rollout plans</dd></div>
-      <div class="rv"><dt class="mono">Delivery</dt><dd>Two-week sprints · backlog grooming · definition of ready and done · phased rollout with guardrails and rollback triggers</dd></div>
-      <div class="rv"><dt class="mono">Engineering</dt><dd>C# / .NET · React / TypeScript · SQL Server with Dapper · multi-tenant architecture and row-level data scope</dd></div>
-      <div class="rv"><dt class="mono">AI</dt><dd>LLM function calling · tool and permission design · per-tenant cost and usage budgeting</dd></div>
-      <div class="rv"><dt class="mono">Languages</dt><dd>Turkish (native) · English (professional)</dd></div>
-    </dl>
-  </div>
-</section>
-
-<!-- ============================ CONTACT ============================ -->
-<section id="contact" class="contact">
-  <div class="wrap">
-    <h2 class="sechead mono rv">Contact</h2>
-    <p class="rv">If you're hiring for product ownership somewhere the domain is genuinely complicated, I'd
-    like to hear about it. The case study above is the most honest thing I can show you about how I work.</p>
-    <div class="lines">
-      <div class="rv"><span class="mono">Email</span><a href="mailto:hilalsinemsayar@gmail.com">hilalsinemsayar@gmail.com</a></div>
-      <div class="rv"><span class="mono">LinkedIn</span><a href="https://www.linkedin.com/in/hilalsinemsayar/">linkedin.com/in/hilalsinemsayar</a></div>
-      <div class="rv"><span class="mono">GitHub</span><a href="https://github.com/hilalsinem">github.com/hilalsinem</a></div>
-      <div class="rv"><span class="mono">Case study</span><a href="case-study-prq.pdf">Purchase Requisition, PRD and business analysis (PDF)</a></div>
+    <div class="row rv">
+      <div class="side mono">Product case</div>
+      <div>
+        <h3>Supply chain analytics</h3>
+        <p class="sub">Wizardio / SCW.AI</p>
+        <p>Usability and monitoring work on a manufacturing analytics platform: in-context tooltips,
+        dashboard filtering, anomaly alerts, a data distribution report. User stories, acceptance criteria
+        and sprint planning across customer success, design and engineering.</p>
+        <div class="tags"><span>Product</span><span>UX</span><span>Analytics</span></div>
+      </div>
     </div>
+
+    <div class="row rv">
+      <div class="side mono">Graduation</div>
+      <div>
+        <h3>Tarifeni Bul</h3>
+        <p class="sub">AI-based mobile tariff recommendation</p>
+        <p>Forecasts next month's mobile data need from past usage and recommends the cheapest package
+        across Turkish operators.</p>
+        <div class="tags"><span>Python</span><span>ML</span><span>Flutter</span><span>Firebase</span></div>
+      </div>
+    </div>
+
+    <div class="row rv">
+      <div class="side mono">Research</div>
+      <div>
+        <h3>SISMOS</h3>
+        <p class="sub">Emergency Bluetooth tracker</p>
+        <p>Estimates distance from Bluetooth signal strength with a trained model, to help locate people
+        trapped under rubble after an earthquake.</p>
+        <div class="tags"><span>Android</span><span>BLE</span><span>ML</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 06 CONTACT ===== -->
+<section id="contact">
+  <div class="wrap">
+    <div class="sechead rv"><span class="n mono">06</span><h2>Contact</h2></div>
+    <div class="row rv"><div class="side mono">Email</div>
+      <div><a href="mailto:hilalsinemsayar@gmail.com">hilalsinemsayar@gmail.com</a></div></div>
+    <div class="row rv"><div class="side mono">LinkedIn</div>
+      <div><a href="https://www.linkedin.com/in/hilalsinemsayar/">linkedin.com/in/hilalsinemsayar</a></div></div>
+    <div class="row rv"><div class="side mono">GitHub</div>
+      <div><a href="https://github.com/hilalsinem">github.com/hilalsinem</a></div></div>
+    <div class="row rv"><div class="side mono">Case study</div>
+      <div><a href="case-study-prq.pdf">Project budget control, PDF</a></div></div>
   </div>
 </section>
 
 <footer>
-  <div class="wide">
-    <span class="mono">Hilal Sinem Sayar</span>
-    <span class="mono">Figures in the case study are rounded for sharing</span>
+  <div class="wrap">
+    <span class="mono">Hilal Sinem Sayar · İzmir</span>
+    <span class="mono">Figures rounded for sharing</span>
   </div>
 </footer>
 
 <script>
 (function(){
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* ---------- headline ---------- */
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   requestAnimationFrame(function(){ document.getElementById('h1').classList.add('go'); });
 
-  /* ---------- scroll progress ---------- */
   var prog = document.getElementById('prog');
   function onScroll(){
     var h = document.documentElement;
-    var p = h.scrollTop / (h.scrollHeight - h.clientHeight || 1);
-    prog.style.width = Math.min(100, p * 100) + '%';
+    prog.style.width = Math.min(100, h.scrollTop/(h.scrollHeight-h.clientHeight||1)*100)+'%';
   }
   addEventListener('scroll', onScroll, {passive:true}); onScroll();
 
-  /* ---------- generic reveal ---------- */
   var io = new IntersectionObserver(function(es){
-    es.forEach(function(e){
-      if(!e.isIntersecting) return;
-      e.target.classList.add('in');
-      io.unobserve(e.target);
-    });
-  }, {rootMargin:'0px 0px -12% 0px', threshold:0.05});
-  var idx = 0, lastTop = -999;
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {rootMargin:'0px 0px -10% 0px', threshold:0.05});
+  var idx=0, last=-999;
   document.querySelectorAll('.rv').forEach(function(el){
     var t = el.getBoundingClientRect().top;
-    idx = (Math.abs(t - lastTop) < 220) ? idx + 1 : 0;
-    lastTop = t;
-    el.style.setProperty('--i', Math.min(idx, 4));
+    idx = (Math.abs(t-last) < 200) ? idx+1 : 0; last = t;
+    el.style.setProperty('--i', Math.min(idx,3));
     io.observe(el);
   });
 
-  /* ---------- run-once-on-view helper ---------- */
   function onView(el, fn){
     if(!el) return;
     var o = new IntersectionObserver(function(es){
@@ -892,116 +692,65 @@
     o.observe(el);
   }
 
-  /* ---------- hero pipeline ---------- */
-  var pipe = document.getElementById('pipe');
-  onView(pipe, function runPipe(){
-    var steps = pipe.querySelectorAll('.st');
-    function cycle(){
-      steps.forEach(function(s){ s.classList.remove('on'); s.querySelector('.fill').style.width='0'; });
-      steps.forEach(function(s,i){
-        setTimeout(function(){
-          s.classList.add('on');
-          var f = s.querySelector('.fill');
-          f.style.transition = 'width .85s cubic-bezier(.3,.8,.3,1)';
-          f.style.width = (i === steps.length-1 ? '0' : '100%');
-        }, 380 + i*900);
-      });
-      if(!reduce) setTimeout(cycle, 6200);
-    }
-    cycle();
-  });
+  function countTo(el, from, to, ms, suffix){
+    if(reduce){ el.textContent = to+(suffix||''); return; }
+    var t0 = performance.now();
+    (function step(now){
+      var p = Math.min(1,(now-t0)/ms), e = 1-Math.pow(1-p,3);
+      el.textContent = Math.round(from+(to-from)*e)+(suffix||'');
+      if(p<1) requestAnimationFrame(step);
+    })(t0);
+  }
 
-  /* ---------- PRQ form sequence ---------- */
   var prq = document.getElementById('prq');
   function playPrq(){
     if(!prq) return;
-    var bar   = prq.querySelector('.track2 i');
-    var pct   = prq.querySelector('[data-pct]');
-    var amt   = prq.querySelector('[data-amt]');
-    var left  = prq.querySelector('[data-left]');
-    var typed = prq.querySelector('[data-type]');
+    var bar=prq.querySelector('.track2 i'), pct=prq.querySelector('[data-pct]'),
+        amt=prq.querySelector('[data-amt]'), left=prq.querySelector('[data-left]'),
+        typed=prq.querySelector('[data-type]');
     prq.classList.remove('over');
-    bar.style.width = '0'; pct.textContent = '0%';
-    amt.textContent = '64,200'; left.textContent = '92,800';
-    typed.textContent = '';
-
-    setTimeout(function(){ bar.style.width = '87%'; countTo(pct, 0, 87, 1300, '%'); }, 250);
-
-    var word = 'cem';
+    bar.style.width='0'; pct.textContent='0%'; amt.textContent='64,200';
+    left.textContent='92,800'; typed.textContent='';
+    setTimeout(function(){ bar.style.width='87%'; countTo(pct,0,87,1300,'%'); }, 250);
     setTimeout(function(){
-      word.split('').forEach(function(ch,i){
-        setTimeout(function(){ typed.textContent += ch; }, i*150);
-      });
+      'cem'.split('').forEach(function(ch,i){ setTimeout(function(){ typed.textContent+=ch; }, i*150); });
     }, 1500);
-
     setTimeout(function(){
-      prq.classList.add('over');
-      bar.style.width = '100%';
-      countTo(pct, 87, 104, 900, '%');
-      amt.textContent = '199,000';
-      left.textContent = '-42,000';
+      prq.classList.add('over'); bar.style.width='100%';
+      countTo(pct,87,104,900,'%'); amt.textContent='199,000'; left.textContent='-42,000';
     }, 2900);
   }
   onView(prq, playPrq);
 
-  /* ---------- assistant sequence ---------- */
   var asst = document.getElementById('asst');
   function playAsst(){
     if(!asst) return;
-    var say = asst.querySelector('[data-say]');
-    var flds = asst.querySelectorAll('.fld');
-    say.textContent = '';
-    flds.forEach(function(f){ f.classList.remove('on'); });
-    var text = '20 bags of cement and 5 rolls of insulation for the Block B site, needed next Wednesday';
-    var i = 0;
+    var say=asst.querySelector('[data-say]'), flds=asst.querySelectorAll('.fld');
+    say.textContent=''; flds.forEach(function(f){ f.classList.remove('on'); });
+    var text='20 bags of cement and 5 rolls of insulation for the Block B site, needed next Wednesday', i=0;
     (function type(){
-      if(i >= text.length){
-        flds.forEach(function(f,k){ setTimeout(function(){ f.classList.add('on'); }, 260 + k*180); });
+      if(i>=text.length){
+        flds.forEach(function(f,k){ setTimeout(function(){ f.classList.add('on'); }, 260+k*180); });
         return;
       }
       say.textContent += text[i++];
-      setTimeout(type, reduce ? 0 : 26);
+      setTimeout(type, reduce?0:26);
     })();
   }
   onView(asst, playAsst);
 
-  /* ---------- results chart ---------- */
   onView(document.getElementById('chart'), function(){
-    document.querySelectorAll('#chart .bar2 span').forEach(function(s){
-      s.style.width = s.dataset.w + '%';
-    });
+    document.querySelectorAll('#chart .bar2 span').forEach(function(s){ s.style.width = s.dataset.w+'%'; });
   });
+  onView(document.getElementById('diag'), function(){ document.getElementById('diag').classList.add('go'); });
+  onView(document.getElementById('sheet'), function(){ document.getElementById('sheet').classList.add('go'); });
 
-  /* ---------- diagram + timesheet ---------- */
-  onView(document.getElementById('diag'), function(){
-    document.getElementById('diag').classList.add('go');
-  });
-  onView(document.getElementById('sheet'), function(){
-    document.getElementById('sheet').classList.add('go');
-  });
-
-  /* ---------- counters ---------- */
-  function countTo(el, from, to, ms, suffix){
-    if(reduce){ el.textContent = to + (suffix||''); return; }
-    var t0 = performance.now();
-    (function step(now){
-      var p = Math.min(1, (now - t0) / ms);
-      var e = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.round(from + (to - from) * e) + (suffix || '');
-      if(p < 1) requestAnimationFrame(step);
-    })(t0);
-  }
   document.querySelectorAll('[data-count]').forEach(function(el){
-    onView(el, function(){
-      countTo(el, 0, parseInt(el.dataset.count,10), 1100, el.dataset.suffix || '');
-    });
+    onView(el, function(){ countTo(el, 0, parseInt(el.dataset.count,10), 1100, el.dataset.suffix||''); });
   });
 
-  /* ---------- replay buttons ---------- */
   document.querySelectorAll('[data-replay]').forEach(function(b){
-    b.addEventListener('click', function(){
-      if(b.dataset.replay === 'prq') playPrq(); else playAsst();
-    });
+    b.addEventListener('click', function(){ b.dataset.replay==='prq' ? playPrq() : playAsst(); });
   });
 })();
 </script>
