@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# hilalsinem.github.io
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Personal site: [hilalsinem.github.io](https://hilalsinem.github.io)
 
-## Available Scripts
+## What is served
 
-In the project directory, you can run:
+`index.html` at the repository root. It is a single self-contained page: all styles,
+scripts, illustrations and animations are inline. The only external request is the
+Google Fonts stylesheet. There is no build step.
 
-### `npm start`
+`case-study-prq.pdf` is the product document linked from the page. The two links on
+the page point at that exact filename, so it has to keep that name and stay next to
+`index.html`.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+GitHub Pages is set to **Deploy from a branch → main → / (root)**.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Editing
 
-### `npm test`
+Open `index.html` in any editor and change the text. Push, and the site updates.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The animations are driven by a small script at the bottom of the file:
 
-### `npm run build`
+| Element | id | What it does |
+|---|---|---|
+| Requisition form | `prq` | Budget bar fills, search types, form flips to over-budget |
+| Results chart | `chart` | Bars grow to their target widths |
+| Approval diagram | `diag` | Nodes appear, arrows draw themselves |
+| Assistant panel | `asst` | Sentence types out, draft fields populate |
+| Timesheet | `sheet` | Day header highlights, rows tick in sequence |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Everything respects `prefers-reduced-motion`, so nothing animates for visitors who
+have reduced motion turned on.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## The previous React version
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The Create React App project is still in this repository (`src/`, `public/`,
+`docs/`, `package.json`). Nothing is served from it while Pages points at the root.
+To go back to it, set the Pages source to `/docs` instead.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Note that `npm run build` writes into `build/`, not `docs/`, so the old flow was to
+build and then copy the output into `docs/` by hand.
